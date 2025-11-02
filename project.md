@@ -10,11 +10,14 @@ Ideas:
 - See changes to a website over time, run on a schedule
 
 ## Architecture
-Go - queue processor running concurrently.
-Bubbletea? for TUI, to come later.
-Storage, file or sqlite should be fine.
+Language: Go - queue processor running concurrently.
+Storage: file or sqlite should be fine.
+Testing: TBD.
 
-## Config
+### Other
+Bubbletea? for TUI, to come later.
+
+## Rando notes
 Ingestion: file, web.
 Cli, try out bubbletea as a tui.
 Service that ingests sites, scans them, put results in db.
@@ -32,8 +35,5 @@ Config file:
 - how often
 - User agent
 
-## Steps
-### To-do
-
-### Done
-
+## Config
+TBD.
