@@ -1,15 +1,23 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"os"
+
+	"github.com/fenetikm/scanup/internal/commands/version"
 )
 
 func main() {
-	fmt.Println("Arguments:", os.Args[1:])
+	args := os.Args[1:]
+	if len(args) < 1 {
+		log.Fatalf("Missing command argument.")
+	}
 
-	// Check if arguments were provided
-	if len(os.Args) > 1 {
-		fmt.Println("First argument:", os.Args[1])
+	if args[0] == "version" {
+		cmd := commands.Version{}
+		err := cmd.Run(nil)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 }
