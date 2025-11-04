@@ -8,11 +8,11 @@ import (
 type Version struct{}
 
 func (v *Version) Run(state *internal.State) error {
-	fmt.Println("Version 0.0.1")
+	fmt.Println(state.Version)
 	return nil
 }
 
-func (v *Version) GetName() string {
+func (v *Version) Name() string {
 	return "version"
 }
 

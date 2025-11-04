@@ -6,6 +6,6 @@ import (
 
 type Command interface {
 	Run(state *internal.State) error
-	GetName() string
+	Name() string
 	Help() string
 }

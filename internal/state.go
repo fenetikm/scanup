@@ -5,5 +5,7 @@ import (
 )
 
 type State struct {
-	config *config.Config
+	Name    string
+	Version string
+	Config  *config.Config
 }
