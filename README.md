@@ -1,5 +1,5 @@
 # ScanUp!
-Site scanner for lulz and profit!
+Scan your site, identify issues, profit!
 
 ## Usage
 TBD.
