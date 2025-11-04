@@ -1,7 +1,11 @@
 package commands
 
+import (
+	"github.com/fenetikm/scanup/internal"
+)
+
 type Command interface {
-	Run(params map[string]string) error
+	Run(state *internal.State) error
 	GetName() string
 	Help() string
 }

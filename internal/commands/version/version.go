@@ -1,11 +1,13 @@
 package commands
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/fenetikm/scanup/internal"
+)
 
 type Version struct{}
 
-func (v *Version) Run(params map[string]string) error {
-	// TODO: get ver from somewhere easier
+func (v *Version) Run(state *internal.State) error {
 	fmt.Println("Version 0.0.1")
 	return nil
 }
@@ -15,5 +17,6 @@ func (v *Version) GetName() string {
 }
 
 func (v *Version) Help() string {
+	// Todo: get the app name from config
 	return "Returns the version of ScanUp"
 }
