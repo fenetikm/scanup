@@ -11,29 +11,27 @@ Ideas:
 
 ## Architecture
 Language: Go - queue processor running concurrently.
-Storage: file or sqlite should be fine.
+Storage: file, sqlite, redis backends.
 Testing: TBD.
 
+Idea:
+- Have different aspects to scan for such as:
+    * domain (check ownership, expiry, a records)
+    * csp, headers
+    * libraries / frameworks (up to date?)
+    * uptime
+    * existence of bad files
+- Pull everything into key/value pairs
+- For each of those, have analysers, simplest being regex but could have AI
+- Reports are created, like NeoVim healthcheck
+- Compile all into a full report
+- Report to DB, file, stdout
+- Queues for all the things (nice to have)
+- Different timing schedules, essentially cron
+- Retry policies
+
 ### Other
-Bubbletea? for TUI, to come later.
-
-## Rando notes
-Ingestion: file, web.
-Cli, try out bubbletea as a tui.
-Service that ingests sites, scans them, put results in db.
-view results.
-Scanners: pattern, ai.
-Scan upguard website?
-Find an out of date package or vuln? Obfuscated using unicode whitespace?
-Or .env file in the open.
-Service
-- Add site
-- List sites
-
-Config file:
-- retry
-- how often
-- User agent
+Bubbletea? if we make a TUI
 
 ## Config
-TBD.
+How to store sites?
