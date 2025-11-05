@@ -1,11 +1,16 @@
 package version
 
 import (
+	"fmt"
+
 	"github.com/fenetikm/scanup/internal"
 	"github.com/fenetikm/scanup/internal/commands"
 )
 
 func run(state *internal.State, args []string) (string, error) {
+	if len(args) > 0 {
+		fmt.Printf("args: %v\n", args)
+	}
 	return "Version " + state.Version, nil
 }
 

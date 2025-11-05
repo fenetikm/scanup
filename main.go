@@ -31,11 +31,16 @@ func main() {
 		log.Fatalf("Missing command argument.")
 	}
 
-	// Todo: replace with handlers, registry
-	// Todo: parse other args and flags
-	if args[0] == "version" {
+	command := args[0]
+	extraArgs := []string{}
+	if len(args) > 1 {
+		extraArgs = args[1:]
+	}
+
+	// Todo: replace with handlers/registry
+	if command == "version" {
 		cmd := version.Create()
-		output, err := cmd.Run(&appState, []string{})
+		output, err := cmd.Run(&appState, extraArgs)
 		if err != nil {
 			log.Fatal(err)
 		}
