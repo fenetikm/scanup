@@ -2,7 +2,7 @@
 Plan of attack and what to do next.
 
 ## To-do list
-- [ ] Test for version
+- [ ] Refactor Command, flags
 - [ ] Pull a website into a file
 
 ## Components
@@ -18,3 +18,4 @@ Initial goal: no db, point at a website, grab the html, create a report
 - [X] Claude setup
 - [X] `version` command works, hard coded
 - [X] State holding configuration, configuration read from file system
+- [X] Test for version

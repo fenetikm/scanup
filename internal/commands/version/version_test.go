@@ -1,4 +1,4 @@
-package commands
+package version
 
 import (
 	"testing"
@@ -10,4 +10,3 @@ import (
 func TestVersion(t *testing.T) {
 	// state := internal.State{Version: "1"}
 }
-

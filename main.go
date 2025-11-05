@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "embed"
+	"fmt"
 	"log"
 	"os"
 
@@ -30,13 +31,14 @@ func main() {
 		log.Fatalf("Missing command argument.")
 	}
 
-	// Todo: replace with handlers
+	// Todo: replace with handlers, registry
 	// Todo: parse other args and flags
 	if args[0] == "version" {
-		cmd := commands.Version{}
-		err := cmd.Run(&appState)
+		cmd := version.Create()
+		output, err := cmd.Run(&appState, []string{})
 		if err != nil {
 			log.Fatal(err)
 		}
+		fmt.Println(output)
 	}
 }

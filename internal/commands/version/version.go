@@ -1,22 +1,21 @@
-package commands
+package version
 
 import (
-	"fmt"
 	"github.com/fenetikm/scanup/internal"
+	"github.com/fenetikm/scanup/internal/commands"
 )
 
-type Version struct{}
-
-func (v *Version) Run(state *internal.State) error {
-	fmt.Println(state.Version)
-	return nil
+func run(state *internal.State, args []string) (string, error) {
+	return "Version " + state.Version, nil
 }
 
-func (v *Version) Name() string {
-	return "version"
-}
+func Create() *commands.Command {
+	version := commands.CreateCommand(
+		"version",
+		"Display the version of the program",
+	)
 
-func (v *Version) Help() string {
-	// Todo: get the app name from config
-	return "Returns the version of ScanUp"
+	version.Run = run
+
+	return version
 }
